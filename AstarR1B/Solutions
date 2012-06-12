@@ -1,0 +1,21 @@
+
+Baidu Astar Round 1B
+
+Problem description: http://www.baiduer.com.cn/2012-06/28158.html 
+
+
+=== Solutions(without problem D) ===
+
+problem A: (Gaussian elimination)
+	1. get binary base with Gaussian elimination method
+	2. construct the largest and the second largest number with bases
+
+problem B:(simple dynamic programming)
+	f[i][j]: send out j presents of type A to the first i friends, i.e. (i-j) presents of type B
+	f[i][j] = max{f[i-1][j] + present[i].w1, f[i-1][j-1] + present[i].w0}
+
+problem C: (Disjoint set)
+	1. get all the similarity distances
+	2. enumerate distances from the smallest to largest, and combine all the points smaller than current distance to one cluster
+	3. repeat step 2 until the number of clusters/sets smaller than k
+
